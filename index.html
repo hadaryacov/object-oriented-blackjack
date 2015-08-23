@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="blackjack.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<script type="text/javascript" src="blackjack.js"></script>
+	<title>object oriented back jack</title>
+</head>
+<body>
+	<div class="pack">
+		<div class="cards">
+		    
+	    </div>
+	    <button id="deal" class="deal">deal</button>
+	</div><!--pack-->
+
+	<div class="users">
+		<div class="user player animated">
+			<div class="user-name">
+				<button class="stop" id="stop">stop</button>
+				user 
+				<span class="sum"></span>
+				<button class="hit" id="hit">hit</button>
+			</div>
+			<div class="user-cards">
+
+			</div>
+		</div>
+
+		<div class="user computer animated">
+			<div class="user-name">
+				computer
+				<span class="sum hide"></span>
+			</div>
+			<div class="user-cards">
+
+			</div>
+		</div>
+	</div>
+	
+	<div id="card" class="hide animated">
+		<div class="front">
+			<div class="corner top">
+				<span class="top-number"></span>
+				<span class="top-type-sign"></span>
+			</div>
+			
+			<div class="signs">
+			</div>
+
+			<div class="corner bottom">
+				<span class="bottom-number"></span>
+				<span class="bottom-type-sign"></span>
+			</div>
+		</div>
+
+		<div class="back">
+		</div>
+	</div>
+
+</body>
+</html>

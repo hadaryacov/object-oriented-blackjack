@@ -1,0 +1,350 @@
+/* CSS declarations go here */
+html{
+	height:100%;
+	/*background-image: url('/img/Roulette.jpg');
+	background-color:#333;
+	background-blend-mode:multiply;*/
+	background-size:cover;
+	box-sizing: border-box;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight:lighter;
+	background-color: #26282B;
+}
+html,body{
+	padding:0;
+	margin:0px;
+}
+
+body{
+	font-size: 5px;
+	position:relative;
+	height:100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.hide{
+	opacity:0;
+}
+button {
+    outline: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight:lighter;
+    cursor:pointer;
+}
+
+.pack{
+	margin: 0px auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+    /*background-color: white;*/
+    border-radius: 50%;
+    background:radial-gradient(#26282B, #161d20);
+    background-color:#818D97;
+    position:relative;
+    z-index: 3;
+}
+
+button.deal{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color:#5F85DB;
+	color:white;
+	font-size:20px;
+	cursor:pointer;
+	z-index:9;
+}
+
+.cards{
+	margin: 30px 60px;
+}
+
+.pack .card{
+	position:absolute;
+}
+
+/*cards*/
+.card {
+  background-color: #fff;
+  font-family: 'Suit-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  border-radius: 0.8em;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  float: left;
+  width: 16em;
+  height: 22.4em;
+  margin: 0 1.2em 1.2em 0;
+  position: relative;
+  z-index: 2;
+  transition:all 0.3s;
+  cursor:pointer;
+  color:black;
+}
+.card.noshadow {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.card .card-back img {
+  width: 16em;
+  height: 22.4em;
+}
+.card.flipped {
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back{
+	opacity:1;
+}
+.card .back{
+	/*background-image:url('img/card-back-blue.png');*/
+	opacity:0;
+	width:100%;
+	height:100%;
+	background-size: 100% 100%;
+	transition:all 0.3s;
+	background-color:#90B8F8;
+	border-radius: 0.8em;
+}
+
+.card.flipped .front{
+	opacity:0;
+}
+
+.card .front{
+	opacity:1;
+	transition:all 0.3s;
+}
+
+.card.heart,
+.card.diamond {
+  color: #df0000;
+}
+.card .corner {
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+}
+.card .corner span {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.card .corner .number {
+  font-size: 2em;
+  height: 1.92em/2;
+  line-height: 1.92em/2;
+}
+.card .corner.top {
+  left: 0.64em;
+  top: 0.96em;
+}
+.card .corner.bottom {
+  bottom: 0.96em;
+  right: 0.64em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .card-ace span.suit.middle_center {
+  font-size: 10.24em;
+  left: 0.45517241379310347em;
+  top: 0.593103448275862em;
+}
+.card .card-ten .corner .number {
+  font-size: 1.5em;
+}
+.card .face img {
+  position: absolute;
+  left: 2.56em;
+  top: 2.08em;
+  width: 10.8em;
+  height: 18.24em;
+}
+.card .suit {
+  font-size: 5.8em;
+  font-weight: normal;
+  width: 0.6896551724137931em;
+  height: 0.786206896551724em;
+  line-height: 0.786206896551724em;
+  position: absolute;
+  text-align: center;
+}
+.card .suit.top_center {
+  left: 1.0482758620689656em;
+  top: 0.3310344827586207em;
+}
+.card .suit.top_left {
+  left: 0.41379310344827586em;
+  top: 0.3310344827586207em;
+}
+.card .suit.top_right {
+  right: 0.41379310344827586em;
+  top: 0.3310344827586207em;
+}
+.card .suit.middle_center {
+  left: 1.0482758620689656em;
+  top: 1.517241379310345em;
+}
+.card .suit.middle_top {
+  left: 1.0482758620689656em;
+  top: 0.9655172413793103em;
+}
+.card .suit.middle_bottom {
+  bottom: 0.9655172413793103em;
+  left: 1.0482758620689656em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .suit.middle_left {
+  left: 0.41379310344827586em;
+  top: 1.517241379310345em;
+}
+.card .suit.middle_right {
+  right: 0.41379310344827586em;
+  top: 1.517241379310345em;
+}
+.card .suit.middle_top_center {
+  left: 1.0482758620689656em;
+  top: 0.8275862068965517em;
+}
+.card .suit.middle_top_left {
+  left: 0.41379310344827586em;
+  top: 1.103448275862069em;
+}
+.card .suit.middle_top_right {
+  right: 0.41379310344827586em;
+  top: 1.103448275862069em;
+}
+.card .suit.middle_bottom_left {
+  bottom: 1.103448275862069em;
+  left: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .suit.middle_bottom_right {
+  bottom: 1.103448275862069em;
+  right: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .suit.middle_bottom_center {
+  bottom: 0.8275862068965517em;
+  left: 1.0482758620689656em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .suit.bottom_center {
+  bottom: 0.3310344827586207em;
+  left: 1.0482758620689656em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .suit.bottom_left {
+  bottom: 0.3310344827586207em;
+  left: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.card .suit.bottom_right {
+  bottom: 0.3310344827586207em;
+  right: 0.41379310344827586em;
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+
+
+/*users*/
+.users{
+	display: flex;
+	margin-top: 50px;
+	font-size: 15px;
+}
+.users .user{
+	flex: 1;
+	background-color: rgba(255,255,255,0.1);
+	margin: 0px 30px;
+	color: white;
+	text-align: center;
+	min-height:300px;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	position: relative;
+}
+
+.users .user.winner{
+	background-color: green;
+}
+
+.users .user.loser{
+	background-color: red;
+}
+
+.users .user .user-name{
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	padding: 10px;
+}
+.users .user .user-cards{
+	font-size:5px;
+	padding: 40px 50px 20px 20px;
+}
+.users .user .user-cards .card{
+	margin-right: -50px;
+}
+
+button.stop{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	height: 50px;
+	border: none;
+	width: 50px;
+	color: white;
+	background-color: #DB5F5F;
+	border-radius: 50%;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	font-size:14px;
+}
+
+button.hit{
+	font-size:14px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	height: 50px;
+	border: none;
+	width: 50px;
+	color: rgba(0,0,0,0.7);
+	background-color: #5FDBB6;
+	border-radius: 50%;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
